@@ -1,9 +1,10 @@
 # Assignment 06 – Visitor Pattern: In-Memory File System
 
-Astana IT University · ShP-2216 Software Design Patterns · Java 17 · Maven · JUnit 5
+**Student:** Nursultan Nurislam · **Group:** SE-2538 · **Course:** ShP-2216 Software Design Patterns, Astana IT University
 
-An in-memory hierarchical file system with three independent operations implemented
-via the **Visitor** pattern (double dispatch).
+A small Java 17 / Maven project that models a hierarchical file system (files and directories) and runs three
+independent operations over it with the **Visitor** pattern and double dispatch: total size, filtered search and tree statistics.
+Covered by 40 JUnit 5 tests.
 
 ## How to run
 
