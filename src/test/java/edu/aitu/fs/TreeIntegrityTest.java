@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TreeIntegrityTest {
-
     @Test
     void negativeFileSizeIsRejected() {
         assertThrows(TreeIntegrityException.class, () -> new FileNode("bad", -1));
@@ -66,7 +65,7 @@ class TreeIntegrityTest {
         DirectoryNode root = new DirectoryNode("root");
         DirectoryNode child = root.add(new DirectoryNode("child"));
         DirectoryNode grandChild = child.add(new DirectoryNode("grandChild"));
-        // root has no parent, so only the cycle rule can stop this
+
         assertThrows(TreeIntegrityException.class, () -> grandChild.add(root));
         assertTrue(root.getParent().isEmpty());
     }

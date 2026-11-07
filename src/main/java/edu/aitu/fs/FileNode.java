@@ -1,8 +1,6 @@
 package edu.aitu.fs;
 
-/** Leaf element: a file with a name and an immutable, non-negative size in bytes. */
 public final class FileNode extends AbstractNode {
-
     private final long sizeInBytes;
 
     public FileNode(String name, long sizeInBytes) {

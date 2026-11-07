@@ -6,15 +6,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatisticsVisitorTest {
-
     @Test
     void countsFilesDirectoriesAndDepthForNestedTree() {
         StatisticsVisitor visitor = new StatisticsVisitor();
         TestTrees.sampleProject().accept(visitor);
         assertEquals(6, visitor.getFileCount());
-        // project, empty, src, util, deep
+
         assertEquals(5, visitor.getDirectoryCount());
-        // project(0) -> src(1) -> util(2) -> deep(3) -> Notes.md(4)
+
         assertEquals(4, visitor.getMaxDepth());
     }
 

@@ -8,8 +8,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DoubleDispatchTest {
-
-    /** Does NOT traverse: it only records which overload each element selected. */
     private static final class RecordingVisitor implements Visitor {
         final List<String> calls = new ArrayList<>();
 
@@ -37,7 +35,7 @@ class DoubleDispatchTest {
         DirectoryNode dir = new DirectoryNode("docs");
         dir.add(new FileNode("a.txt", 1));
         dir.accept(visitor);
-        // accept dispatches exactly once; descending is the visitor's job, not the element's
+
         assertEquals(List.of("dir:docs"), visitor.calls);
     }
 

@@ -10,12 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SearchVisitorTest {
-
     @Test
     void combinesNameAndSizeConditions() {
         SearchVisitor visitor = SearchVisitor.nameEndsWith(".java", 1600);
         TestTrees.sampleProject().accept(visitor);
-        // Helper.java (1500) is too small, README.md has the wrong name
+
         assertEquals(List.of("src/App.java"), visitor.getMatchingPaths());
     }
 

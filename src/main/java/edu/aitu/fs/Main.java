@@ -4,9 +4,7 @@ import edu.aitu.fs.visitor.SearchVisitor;
 import edu.aitu.fs.visitor.StatisticsVisitor;
 import edu.aitu.fs.visitor.TotalSizeVisitor;
 
-/** Deterministic demonstration: fixed data, no input, same output on every run. */
 public final class Main {
-
     private Main() {
     }
 
@@ -66,7 +64,6 @@ public final class Main {
         }
     }
 
-    /** A fourth, ad-hoc visitor used only for printing; it needs no change to the elements. */
     private static final class TreePrinter implements Visitor {
         private final String indent;
 

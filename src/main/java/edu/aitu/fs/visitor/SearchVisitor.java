@@ -8,13 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Predicate;
 
-/**
- * Finds files whose name satisfies a configurable criterion AND whose size is
- * {@code >= minSizeInBytes}. Matches are returned as root-relative paths separated by '/',
- * sorted lexicographically ({@link String#compareTo}).
- */
 public final class SearchVisitor extends TraversingVisitor {
-
     private final Predicate<String> nameCriterion;
     private final long minSizeInBytes;
     private final List<String> matches = new ArrayList<>();
@@ -46,7 +40,6 @@ public final class SearchVisitor extends TraversingVisitor {
         return new SearchVisitor(name -> true, minSizeInBytes);
     }
 
-    /** Sorted, unmodifiable snapshot of the matching paths of the last run. */
     public List<String> getMatchingPaths() {
         List<String> sorted = new ArrayList<>(matches);
         Collections.sort(sorted);
@@ -67,7 +60,6 @@ public final class SearchVisitor extends TraversingVisitor {
 
     @Override
     protected void onDirectory(DirectoryNode directory, int depth) {
-        // only files can match
     }
 
     private boolean isMatch(FileNode file) {

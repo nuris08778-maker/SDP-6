@@ -1,8 +1,6 @@
 package edu.aitu.fs;
 
-/** Single place that decides which node names are legal. */
 final class NameValidator {
-
     private NameValidator() {
     }
 

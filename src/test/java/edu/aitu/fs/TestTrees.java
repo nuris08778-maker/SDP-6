@@ -1,24 +1,9 @@
 package edu.aitu.fs;
 
-/** Fixtures shared by the tests. */
 final class TestTrees {
-
     private TestTrees() {
     }
 
-    /**
-     * project (root)
-     * ├── README.md            100
-     * ├── empty/               (empty directory)
-     * ├── src/
-     * │   ├── App.java        2000
-     * │   ├── App.md           300
-     * │   └── util/
-     * │       ├── Helper.java 1500
-     * │       └── deep/
-     * │           └── Notes.md 50
-     * └── target.log           10
-     */
     static DirectoryNode sampleProject() {
         DirectoryNode root = new DirectoryNode("project");
         root.add(new FileNode("README.md", 100));
